@@ -1,6 +1,7 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using _2024MAUI.Services;
 
 namespace _2024MAUI.ViewModel;
 
@@ -28,14 +29,28 @@ public class MainPageVM : INotifyPropertyChanged
         LoginButton = new Command(Authorize);
     }
 
-    private void Authorize()
+    private async void Authorize()
     {
         //TODO: реализация авторизации
 
-        this.Login = "";
-        this.Password = "";
+        var login = Login;
+        var password = Password;
         
-        //_mainPage.ShowNextPage();
+        // this.Login = "";
+        // this.Password = "";
+
+        //var loginService = (ServiceLocator.GetService(typeof(ILoginService)) as ILoginService);
+        //var loginService = Service<ILoginService>.GetInstance();
+        
+        //TODO: показать loding
+        var result = await Context.LoginService?.Login(login, password)!;
+        
+        if(result)
+            _mainPage.ShowNextPage();
+        else
+        {
+            //TODO: показать ошибку
+        }
     }
 
     public event PropertyChangedEventHandler? PropertyChanged;
