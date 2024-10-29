@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:_2024MAUI"
+             x:Class="_2024MAUI.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:StringToColorConverter x:Key="colorConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <!-- <Grid> -->
+            <!--     <Grid.RowDefinitions> -->
+            <!--         <RowDefinition/> -->
+            <!--         <RowDefinition/> -->
+            <!--         <RowDefinition/> -->
+            <!--     </Grid.RowDefinitions> -->
+            <!--     <Grid.ColumnDefinitions> -->
+            <!--         <ColumnDefinition Width="*"/> -->
+            <!--         <ColumnDefinition Width="*"/> -->
+            <!--         <ColumnDefinition Width="Auto"/> -->
+            <!--     </Grid.ColumnDefinitions> -->
+            <!--     <Button Text="Test" Grid.Row="0" Grid.Column="0"/> -->
+            <!--     <Button Text="Длинный текст" Grid.Row="1" Grid.Column="1"/> -->
+            <!--     <Button Text="Длинный текст" Grid.Row="2" Grid.Column="2"/> -->
+            <!-- </Grid> -->
+           
+            
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"/>
+            
+            <Editor BackgroundColor="Brown" Text="{Binding Login}" />
+            <Editor BackgroundColor="Brown" Text="{Binding Password}"/>
+            <Button Text="Войти" Command="{Binding LoginButton}"/>
+
+            <!-- <Label -->
+            <!--     Text="Hello, World!" -->
+            <!--     BindingContext="{x:Reference MySlider}" -->
+            <!--     Rotation="{Binding Value}" -->
+            <!--     Opacity="{Binding Value}" -->
+            <!--      -->
+            <!--     Style="{StaticResource Headline}" /> -->
+            <!-- -->
+            <!-- <Label -->
+            <!--     x:Name="MyLabel" -->
+            <!--     Text="{Binding Source={x:Reference Name=MyEditor}, Path=Text, Mode=OneWay}" -->
+            <!--     Style="{StaticResource SubHeadline}"/> -->
+            <!-- -->
+            <!-- <Editor x:Name="MyEditor" TextColor="{Binding Text, Source={x:Reference MyEditor}, Converter={StaticResource colorConverter}}"> </Editor> -->
+            <!-- -->
+            <!-- <HorizontalStackLayout> -->
+            <!--   -->
+            <!--     <Switch x:Name="MySwitch"></Switch> -->
+            <!--     <Button -->
+            <!--         x:Name="CounterBtn" -->
+            <!--         BindingContext="{x:Reference MySwitch}" -->
+            <!--         IsEnabled="{Binding IsToggled}" -->
+            <!--         Text="Click me" -->
+            <!--         Clicked="OnCounterClicked" -->
+            <!--         HorizontalOptions="Fill" /> -->
+            <!-- </HorizontalStackLayout> -->
+            <!-- <Slider x:Name="MySlider" Maximum="1"></Slider> -->
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

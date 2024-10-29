@@ -1,52 +1,101 @@
-# Prerequisites
-*.d
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
 
-# Object files
-*.o
-*.ko
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+#ignore thumbnails created by windows
+Thumbs.db
+#Ignore files build by Visual Studio
 *.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
 *.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
 *.pdb
+*.user
+*.aps
+*.pch
+*.vspscc
+*_i.c
+*_p.c
+*.ncb
+*.suo
+*.tlb
+*.tlh
+*.bak
+*.cache
+*.ilk
+*.log
+*.dbmdl
+*.trx
+*.scssc
+*.lib
+*.sbr
+obj/
+TestData/
+RawFiles/
+[Rr]elease*/
+_ReSharper*/
+*.ReSharper
+[Tt]est[Rr]esult*
+*.tmp
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+#Custom
+ErrorsLog/error-*.xml
+*.sdf
+Index.dat
+Storage.dat
+*.orig
+node_modules/
+bower_components/
+.idea/
+.sass-cache/
+.DS_Store
+*.sublime-*
+Elmah.Errors/
+.vs/
+**/packages/**
+App_Data/Logs/
+error-*.xml
+
+!**/wwwroot
+**/wwwroot/*
+!**/wwwroot/AppVersion.json
+
+**/connectionstrings.json
+**/mailsettings.json
+**/appsettings_secret.json
+**/cypress/local-config.js
+**/cypress/videos/
+
+**/Backoffice/src/ImportedFiles
+
+**/[Rr]esources/[Rr]esource.[Dd]esigner.cs
+/src/DiscoveryServer/src/DiscoveryService.Startup/jefile.discovery.db
+
+.yarn
+.swc
