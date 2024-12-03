@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using _2024MAUI.Services;
+using _2024MAUI.Services.DTOs;
 
 namespace _2024MAUI.ViewModel;
 
@@ -43,13 +44,17 @@ public class MainPageVM : INotifyPropertyChanged
         //var loginService = Service<ILoginService>.GetInstance();
         
         //TODO: показать loding
-        var result = await Context.LoginService?.Login(login, password)!;
-        
-        if(result)
-            _mainPage.ShowNextPage();
-        else
+
+        try
         {
-            //TODO: показать ошибку
+            var result = await Context.LoginService?.Login(new LoginDTO(){Username = login, Password = password})!;
+            if(result!=null)
+                _mainPage.ShowNextPage();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine(e);
+            throw;
         }
     }
 

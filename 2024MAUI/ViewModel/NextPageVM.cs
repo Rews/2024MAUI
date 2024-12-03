@@ -17,11 +17,20 @@ public class NextPageVM
     {
         //TODO: Загрузка новостей с сервера
 
-        var newsItems = await Context.NewsService.GetNewsAsync();
-
-        foreach (var news in newsItems)
+        try
         {
-            Items.Add(new ItemVM(){Title = news.Title, Description = news.Description});
+            var newsItems = await Context.NewsService.GetNewsAsync();
+
+            foreach (var news in newsItems)
+            {
+                Items.Add(new ItemVM(){Title = news.Title, Description = news.Description});
+            }
+        }
+        catch (Exception e)
+        {
+            //TODOD: ShowDialog(Messge + ex.ToString())
+            Console.WriteLine(e);
+            throw;
         }
     }
 }
